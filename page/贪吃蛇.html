@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>贪吃蛇</title>
+    <style>
+      /* CSS样式 */
+      #game-board {
+        width: 400px;
+        height: 400px;
+        border: 20px solid black;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .snake {
+        width: 20px;
+        height: 20px;
+        background-color: LightSkyBlue;
+        position: absolute;
+      }
+
+      #food {
+        width: 20px;
+        height: 20px;
+        background-color: Yellow;
+        position: absolute;
+      }
+
+      #score {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 20px;
+      }
+
+      #start-button {
+        display: block;
+        margin: 20px auto;
+      }
+
+      #clear-button {
+        display: block;
+        margin: 20px auto;
+      }
+
+      #leaderboard {
+        margin-top: 20px;
+      }
+
+      #leaderboard h2 {
+        text-align: center;
+      }
+
+      #leaderboard ol {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #leaderboard ol li {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 游戏面板 -->
+    <div id="game-board"></div>
+    <!-- 分数显示 -->
+    <div id="score">Score: 0</div>
+    <!-- 开始游戏按钮 -->
+    <button id="start-button">开始游戏</button>
+    <!-- 清空排行按钮 -->
+    <button id="clear-button">清空排行</button>
+    <!-- 排行榜 -->
+    <div id="leaderboard">
+      <h2>排行榜</h2>
+      <ol id="leaderboard-list"></ol>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 获取元素
+        const gameBoard = document.getElementById("game-board");
+        const scoreElement = document.getElementById("score");
+        const startButton = document.getElementById("start-button");
+        const clearButton = document.getElementById("clear-button");
+        const leaderboardList = document.getElementById("leaderboard-list");
+        // 初始化蛇和食物
+        const snake = [{ x: 0, y: 0 }];
+        const food = { x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20) };
+        let direction = "right";
+        let score = 0;
+
+        // 创建蛇的方法
+        function createSnake() {
+          snake.forEach((segment, index) => {
+            const snakeElement = document.createElement("div");
+            // 设置蛇的位置
+            snakeElement.style.left = segment.x * 20 + "px";
+            snakeElement.style.top = segment.y * 20 + "px";
+            // 添加蛇的样式
+            snakeElement.classList.add("snake");
+            if (index === 0) {
+              // 设置蛇头的颜色
+              snakeElement.style.backgroundColor = "Red";
+            }
+            // 将蛇添加到游戏面板中
+            gameBoard.appendChild(snakeElement);
+          });
+        }
+
+        // 创建食物的方法
+        function createFood() {
+          const foodElement = document.createElement("div");
+          // 设置食物的位置
+          foodElement.style.left = food.x * 20 + "px";
+          foodElement.style.top = food.y * 20 + "px";
+          foodElement.id = "food";
+          // 将食物添加到游戏面板中
+          gameBoard.appendChild(foodElement);
+        }
+
+        // 移动蛇的方法
+        function move() {
+          const head = { x: snake[0].x, y: snake[0].y };
+
+          switch (direction) {
+            case "up":
+              head.y -= 1;
+              break;
+            case "down":
+              head.y += 1;
+              break;
+            case "left":
+              head.x -= 1;
+              break;
+            case "right":
+              head.x += 1;
+              break;
+          }
+
+          snake.unshift(head);
+
+          if (head.x === food.x && head.y === food.y) {
+            // 如果蛇头和食物重叠，生成新的食物，增加分数
+            food.x = Math.floor(Math.random() * 20);
+            food.y = Math.floor(Math.random() * 20);
+            score += 10;
+            scoreElement.textContent = "Score: " + score;
+          } else {
+            // 如果蛇头和食物不重叠，移除蛇尾
+            snake.pop();
+          }
+        }
+
+        // 改变蛇的方向
+        function changeDirection(event) {
+          const keyPressed = event.keyCode;
+
+          switch (keyPressed) {
+            case 37:
+              if (direction !== "right") {
+                direction = "left";
+              }
+              break;
+            case 38:
+              if (direction !== "down") {
+                direction = "up";
+              }
+              break;
+            case 39:
+              if (direction !== "left") {
+                direction = "right";
+              }
+              break;
+            case 40:
+              if (direction !== "up") {
+                direction = "down";
+              }
+              break;
+          }
+        }
+
+        // 检查碰撞
+        function checkCollision() {
+          // 检查是否撞墙
+          if (snake[0].x < 0 || snake[0].x >= 20 || snake[0].y < 0 || snake[0].y >= 20) {
+            return true;
+          }
+
+          // 检查是否撞到自己的身体
+          for (let i = 1; i < snake.length; i++) {
+            if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+              return true;
+            }
+          }
+
+          return false;
+        }
+
+    // 更新排行榜
+    function updateLeaderboard() {
+        // 获取本地存储的排行榜数据
+        const leaderboardData = localStorage.getItem("leaderboard");
+
+        if (leaderboardData) {
+            // 如果有排行榜数据，将其转换为数组
+            const leaderboard = JSON.parse(leaderboardData);
+            // 清空排行榜列表
+            leaderboardList.innerHTML = "";
+            // 遍历排行榜数组，创建列表项并添加到列表中
+            leaderboard.forEach((entry, index) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${index + 1}. ${entry.name}: ${entry.score}`;
+                leaderboardList.appendChild(listItem);
+            });
+        } else {
+            // 如果没有排行榜数据，显示提示信息
+            leaderboardList.innerHTML = "暂无排行榜数据";
+        }
+    }
+
+
+        // 保存分数到排行榜
+        function saveScoreToLeaderboard() {
+          // 获取玩家姓名
+          const playerName = prompt("请输入您的姓名:");
+
+          if (playerName) {
+            // 获取本地存储的排行榜数据
+            const leaderboardData = localStorage.getItem("leaderboard");
+
+            // 创建新的排行榜数组
+            const leaderboard = leaderboardData ? JSON.parse(leaderboardData) : [];
+
+            // 添加当前分数和玩家姓名到排行榜数组
+            leaderboard.push({ name: playerName, score });
+
+            // 根据分数进行排序
+            leaderboard.sort((a, b) => b.score - a.score);
+
+            // 只保留前10个记录
+            leaderboard.splice(10);
+
+            // 将排行榜数据保存到本地存储
+            localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+
+            // 更新排行榜显示
+            updateLeaderboard();
+          }
+        }
+
+        // 清空排行榜
+        function clearLeaderboard() {
+          // 清空本地存储中的排行榜数据
+          localStorage.removeItem("leaderboard");
+  
+          // 更新排行榜显示
+          updateLeaderboard();
+        }
+
+
+        // 开始游戏游戏
+        function startGame() {
+          // 重置蛇和食物的位置、方向和分数
+          snake.length = 1;
+          snake[0] = { x: 0, y: 0 };
+          direction = "right";
+          score = 0;
+          scoreElement.textContent = "Score: " + score;
+          // 清空游戏面板
+          gameBoard.innerHTML = "";
+          // 重新创建蛇和食物，并开始游戏循环
+          createSnake();
+          createFood();
+          gameLoop();
+        }
+
+        // 游戏循环
+        function gameLoop() {
+          // 检查碰撞
+          if (checkCollision()) {
+            // 如果发生碰撞，弹出游戏结束提示框，然后保存分数到排行榜并开始游戏游戏
+            alert("游戏结束！你的分数是: " + score);
+            saveScoreToLeaderboard();
+            return;
+          }
+
+          // 清空游戏面板
+          gameBoard.innerHTML = "";
+
+          // 移动蛇
+          move();
+          // 创建蛇和食物
+          createSnake();
+          createFood();
+
+          // 设置游戏循环的时间间隔
+          setTimeout(gameLoop, 200);
+        }
+
+        // 初始化游戏
+        createSnake();
+        createFood();
+        // 更新排行榜
+        updateLeaderboard();
+        // 监听键盘事件，改变蛇的方向
+        document.addEventListener("keydown", changeDirection);
+        // 监听开始游戏按钮的点击事件
+        startButton.addEventListener("click", startGame);
+        // 监听清空排行按钮的点击事件
+        clearButton.addEventListener("click", clearLeaderboard);
+      });
+    </script>
+  </body>
+</html>

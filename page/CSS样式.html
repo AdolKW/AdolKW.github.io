@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.hightlight {
+		  color: LightSkyBlue;
+		}
+	</style>
+</head>
+<body>
+	<summary> <h1>按钮样式1</h1> </summary>
+	<details><summary class="hightlight">展开</summary>
+		```
+		.button {
+		  display: inline-block;
+		  padding: 12px 24px;
+		  background-color: White;
+		  color: white;
+		  text-decoration: none;
+		  font-size: 16px;
+		  border-radius: 4px;
+		  border: none;
+		  transition: background-color 0.3s;
+		  margin-bottom: 10px;
+		}
+		
+		.button:hover {
+		  background-color: SkyBlue;
+		}
+		```
+	</details>
+	
+	<summary> <h1>书签折叠脚本</h1> </summary>
+	<details><summary class="hightlight">展开</summary>
+		```
+		<style>
+			h3:hover {
+			  cursor: pointer;
+			  user-select: none;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+			  // 获取所有的H3元素
+			  var h3Elements = document.getElementsByTagName("H3");
+			
+			  // 为每个H3元素添加点击事件监听器
+			  for (var i = 0; i < h3Elements.length; i++) {
+			    h3Elements[i].addEventListener("click", function() {
+			      // 切换折叠标题的活动状态
+			      this.classList.toggle("active");
+			
+			      // 获取当前折叠标题下一个兄弟元素的类名为"content"的元素
+			      var contentElement = this.nextElementSibling;
+			
+			      // 切换内容显示/隐藏
+			      if (contentElement.style.display === "block") {
+			        contentElement.style.display = "none";
+			      } else {
+			        contentElement.style.display = "block";
+			      }
+			    });
+			  }
+			
+			  // 获取所有需要添加内容区域的父元素
+			  var parentElements = document.querySelectorAll('.parent');
+			
+			  // 遍历每个父元素
+			  parentElements.forEach(function(parentElement) {
+			    // 创建内容区域元素
+			    var contentElement = document.createElement('DT');
+			    contentElement.classList.add('content');
+			
+			    // 将内容区域元素添加到父元素中
+			    parentElement.appendChild(contentElement);
+			  });
+			};
+		</script>
+		```
+	</details>
+</body>
+</html>
