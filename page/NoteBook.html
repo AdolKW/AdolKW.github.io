@@ -1,130 +1,134 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="/css/global.css">
-		<style type="text/css">
-			.noteBookTitle {
-				text-align: center;
-				font-size: 40px;
-				font-family: 黑体;
-			}
 
-			.container {
-				text-align: center;
-			}
+<head>
+	<link rel="stylesheet" href="/css/global.css">
+	<style type="text/css">
+		.noteBookTitle {
+			margin-top: 0px;
+			text-align: center;
+			font-size: 40px;
+			font-family: 黑体;
+		}
 
-			.noteTitle {
-				margin-bottom: 20px;
-				margin-left: 20px;
-				margin-right: 20px;
+		.container {
+			text-align: center;
+		}
 
-				width: 35%;
-				height: 25px;
-				box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-				/* 添加阴影效果 */
-				border-radius: 10px;
-				/* 圆角处理 */
+		.noteTitle {
+			margin-bottom: 20px;
+			margin-left: 20px;
+			margin-right: 20px;
 
-				font-size: 25px;
-				font-family: 黑体;
-				text-align: center;
-				/* 居中对齐 */
-				padding: 10px;
-				/* 添加内边距 */
-				font-weight: bold;
-				/* 加粗字体 */
-			}
+			width: 35%;
+			height: 25px;
+			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+			/* 添加阴影效果 */
+			border-radius: 10px;
+			/* 圆角处理 */
 
-			.noteContent {
-				margin-top: 20px;
-				margin-bottom: 20px;
-				margin-left: 20px;
-				margin-right: 20px;
+			font-size: 25px;
+			font-family: 黑体;
+			text-align: center;
+			/* 居中对齐 */
+			padding: 10px;
+			/* 添加内边距 */
+			font-weight: bold;
+			/* 加粗字体 */
+		}
 
-				width: 50%;
-				height: 600px;
-				border-radius: 10px;
-				resize: none;
+		.noteContent {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-left: 20px;
+			margin-right: 20px;
 
-				font-size: 20px;
-				font-family: 楷体;
-				text-align: left;
-				padding: 10px;
-				font-weight: bold;
-			}
+			width: 50%;
+			height: 600px;
+			border-radius: 10px;
+			resize: none;
 
-			.funcKey {
-				text-align: center;
-			}
+			font-size: 20px;
+			font-family: 楷体;
+			text-align: left;
+			padding: 10px;
+			font-weight: bold;
+		}
 
-			.funcButton {
-				margin-bottom: 20px;
-				margin-left: 20px;
-				margin-right: 20px;
+		.funcKey {
+			text-align: center;
+		}
 
-				width: 100px;
-				height: 40px;
-				background-color: rgba(255, 255, 255, 0.4);
-				border: 1px solid white;
-				border-radius: 10px;
-				cursor: pointer;
-				transition: background-color 0.3s ease;
+		.funcButton {
+			margin-bottom: 20px;
+			margin-left: 20px;
+			margin-right: 20px;
 
-				font-size: 20px;
-				font-family: 黑体;
-				color: white;
-			}
+			width: 100px;
+			height: 40px;
+			background-color: rgba(255, 255, 255, 0.4);
+			border: 1px solid white;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
 
-			.funcButton:hover {
-				background-color: skyblue;
-			}
+			font-size: 20px;
+			font-family: 黑体;
+			color: white;
+		}
 
-			.noteListContent {
-				height: 160px;
-				overflow: auto;
-			}
+		.funcButton:hover {
+			background-color: skyblue;
+		}
 
-			.noteList {
-				list-style: none;
+		.noteListContent {
+			height: 160px;
+			overflow: auto;
+		}
 
-				font-family: 黑体;
-			}
+		.noteList {
+			list-style: none;
 
-			.noteList li {
-				background-color: rgba(255, 255, 255, 0.4);
-				height: 40px;
-				border: 1px solid white;
-				border-radius: 10px;
-				padding: 10px;
-				cursor: pointer;
-				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-				transition: background-color 0.3s ease;
-			}
+			font-family: 黑体;
+		}
 
-			.noteList li:hover {
-				background-color: skyblue;
-			}
+		.noteList li {
+			background-color: rgba(255, 255, 255, 0.4);
+			height: 40px;
+			border: 1px solid white;
+			border-radius: 10px;
+			padding: 10px;
+			cursor: pointer;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			transition: background-color 0.3s ease;
+		}
 
-			.deleteButton {
-				float: right;
+		.noteList li:hover {
+			background-color: skyblue;
+		}
 
-				background-color: transparent;
-				border: 1px solid;
-				border-radius: 10px;
-				padding: 10px;
-				cursor: pointer;
+		.deleteButton {
+			float: right;
 
-				color: white;
-				font-size: 15px;
-			}
+			background-color: transparent;
+			border: 1px solid;
+			border-radius: 10px;
+			padding: 10px;
+			cursor: pointer;
 
-			.deleteButton:hover {
-				background-color: deepskyblue;
-			}
-		</style>
-	</head>
-	<body>
-		<script src="../js/main.js"></script>
+			color: white;
+			font-size: 15px;
+		}
+
+		.deleteButton:hover {
+			background-color: deepskyblue;
+		}
+	</style>
+</head>
+
+<body>
+	<script src="../js/main.js"></script>
+	<div class="base-container">
 		<h1 class="noteBookTitle">NoteBook</h1>
 
 		<div class="container">
@@ -143,174 +147,176 @@
 		<div class="noteListContent">
 			<ul class="noteList" id="noteList"></ul>
 		</div>
+	</div>
 
-		<script>
-			'use strict';
+	<script>
+		'use strict';
 
-			window.onload = function() {
-				var noteTitle = document.getElementById('noteTitle');
-				var noteContent = document.getElementById('noteContent');
-				var noteList = document.getElementById('noteList');
+		window.onload = function () {
+			var noteTitle = document.getElementById('noteTitle');
+			var noteContent = document.getElementById('noteContent');
+			var noteList = document.getElementById('noteList');
 
-				var saveButton = document.getElementById('saveButton');
-				var clearButton = document.getElementById('clearButton');
-				var exportButton = document.getElementById('exportButton');
-				var importButton = document.getElementById('importButton');
+			var saveButton = document.getElementById('saveButton');
+			var clearButton = document.getElementById('clearButton');
+			var exportButton = document.getElementById('exportButton');
+			var importButton = document.getElementById('importButton');
 
-				saveButton.addEventListener('click', saveNote);
-				clearButton.addEventListener('click', clearNote);
-				exportButton.addEventListener('click', exportNote);
-				importButton.addEventListener('click', importNote);
-				noteList.addEventListener('click', handleNoteClick);
+			saveButton.addEventListener('click', saveNote);
+			clearButton.addEventListener('click', clearNote);
+			exportButton.addEventListener('click', exportNote);
+			importButton.addEventListener('click', importNote);
+			noteList.addEventListener('click', handleNoteClick);
+
+			loadNotes();
+
+			function saveNote() {
+				var note = {
+					title: noteTitle.value,
+					content: noteContent.value,
+					createTime: getTime()
+				};
+
+				var noteJSON = JSON.stringify(note);
+				localStorage.setItem('NOTE_' + note.title, noteJSON);
 
 				loadNotes();
+			}
 
-				function saveNote() {
-					var note = {
-						title: noteTitle.value,
-						content: noteContent.value,
-						createTime: getTime()
+			function loadNotes() {
+				var notes = [];
+				for (var i = 0; i < localStorage.length; i++) {
+					var key = localStorage.key(i);
+					if (key.startsWith("NOTE_")) {
+						var noteJSON = localStorage.getItem(key);
+						var note = JSON.parse(noteJSON);
+						notes.push(note);
+					}
+				}
+
+				notes.sort(function (a, b) {
+					return new Date(b.createTime) - new Date(a.createTime);
+				});
+
+				noteList.innerHTML = "";
+				notes.forEach(function (note) {
+					var listItem = createListItem(note);
+					noteList.appendChild(listItem);
+				});
+			}
+
+			function createListItem(note) {
+				var listItem = document.createElement('li');
+				listItem.innerHTML =
+					`<strong>${note.title}</strong> - ${note.createTime}<button class="deleteButton">删除</button>`;
+				listItem.addEventListener('click', function () {
+					displayNote(note);
+				});
+
+				var deleteButton = listItem.querySelector('.deleteButton');
+				deleteButton.addEventListener('click', function (event) {
+					event.stopPropagation();
+					deleteNote(note);
+				});
+
+				return listItem;
+			}
+
+			function displayNote(note) {
+				noteTitle.value = note.title;
+				noteContent.value = note.content;
+			}
+
+			function deleteNote(note) {
+				localStorage.removeItem("NOTE_" + note.title);
+				loadNotes();
+			}
+
+			function clearNote() {
+				noteTitle.value = '';
+				noteContent.value = '';
+			}
+
+			function exportNote() {
+				var notes = [];
+				for (var i = 0; i < localStorage.length; i++) {
+					var key = localStorage.key(i);
+					if (key.startsWith("NOTE_")) {
+						var noteJSON = localStorage.getItem(key);
+						var note = JSON.parse(noteJSON);
+						notes.push(note);
+					}
+				}
+
+				var txtContent = JSON.stringify(notes, null, 2);
+
+				var element = document.createElement('a');
+				element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(txtContent));
+				element.setAttribute('download', 'notes.txt');
+				element.style.display = 'none';
+				document.body.appendChild(element);
+
+				element.click();
+
+				document.body.removeChild(element);
+			}
+
+			function importNote() {
+				var fileInput = document.createElement('input');
+				fileInput.type = 'file';
+				fileInput.accept = '.txt';
+
+				fileInput.addEventListener('change', function (event) {
+					var file = event.target.files[0];
+					var reader = new FileReader();
+
+					reader.onload = function (e) {
+						var content = e.target.result;
+						var notes = JSON.parse(content);
+
+						notes.forEach(function (note) {
+							var noteJSON = JSON.stringify(note);
+							localStorage.setItem('NOTE_' + note.title, noteJSON);
+						});
+
+						loadNotes();
 					};
 
-					var noteJSON = JSON.stringify(note);
-					localStorage.setItem('NOTE_' + note.title, noteJSON);
+					reader.readAsText(file);
+				});
 
-					loadNotes();
+				fileInput.click();
+			}
+
+
+			function handleNoteClick(event) {
+				var target = event.target;
+				if (target.tagName === 'STRONG') {
+					var noteTitle = target.textContent;
+					var noteJSON = localStorage.getItem('NOTE_' + noteTitle);
+					var note = JSON.parse(noteJSON);
+					displayNote(note);
 				}
+			}
 
-				function loadNotes() {
-					var notes = [];
-					for (var i = 0; i < localStorage.length; i++) {
-						var key = localStorage.key(i);
-						if (key.startsWith("NOTE_")) {
-							var noteJSON = localStorage.getItem(key);
-							var note = JSON.parse(noteJSON);
-							notes.push(note);
-						}
-					}
+			function getTime() {
+				var time = new Date();
+				var hour = time.getHours();
+				var min = time.getMinutes();
+				var sec = time.getSeconds();
 
-					notes.sort(function(a, b) {
-						return new Date(b.createTime) - new Date(a.createTime);
-					});
+				var formattedHour = ("0" + hour).slice(-2);
+				var formattedMin = ("0" + min).slice(-2);
+				var formattedSec = ("0" + sec).slice(-2);
 
-					noteList.innerHTML = "";
-					notes.forEach(function(note) {
-						var listItem = createListItem(note);
-						noteList.appendChild(listItem);
-					});
-				}
+				var formattedDate = time.toISOString().slice(0, 10);
 
-				function createListItem(note) {
-					var listItem = document.createElement('li');
-					listItem.innerHTML =
-						`<strong>${note.title}</strong> - ${note.createTime}<button class="deleteButton">删除</button>`;
-					listItem.addEventListener('click', function() {
-						displayNote(note);
-					});
+				var formattedTime = formattedDate + " " + formattedHour + ":" + formattedMin + ":" + formattedSec;
 
-					var deleteButton = listItem.querySelector('.deleteButton');
-					deleteButton.addEventListener('click', function(event) {
-						event.stopPropagation();
-						deleteNote(note);
-					});
+				return formattedTime;
+			}
+		};
+	</script>
+</body>
 
-					return listItem;
-				}
-
-				function displayNote(note) {
-					noteTitle.value = note.title;
-					noteContent.value = note.content;
-				}
-
-				function deleteNote(note) {
-					localStorage.removeItem("NOTE_" + note.title);
-					loadNotes();
-				}
-
-				function clearNote() {
-					noteTitle.value = '';
-					noteContent.value = '';
-				}
-
-				function exportNote() {
-					var notes = [];
-					for (var i = 0; i < localStorage.length; i++) {
-						var key = localStorage.key(i);
-						if (key.startsWith("NOTE_")) {
-							var noteJSON = localStorage.getItem(key);
-							var note = JSON.parse(noteJSON);
-							notes.push(note);
-						}
-					}
-
-					var txtContent = JSON.stringify(notes, null, 2);
-
-					var element = document.createElement('a');
-					element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(txtContent));
-					element.setAttribute('download', 'notes.txt');
-					element.style.display = 'none';
-					document.body.appendChild(element);
-
-					element.click();
-
-					document.body.removeChild(element);
-				}
-
-				function importNote() {
-					var fileInput = document.createElement('input');
-					fileInput.type = 'file';
-					fileInput.accept = '.txt';
-
-					fileInput.addEventListener('change', function(event) {
-						var file = event.target.files[0];
-						var reader = new FileReader();
-
-						reader.onload = function(e) {
-							var content = e.target.result;
-							var notes = JSON.parse(content);
-
-							notes.forEach(function(note) {
-								var noteJSON = JSON.stringify(note);
-								localStorage.setItem('NOTE_' + note.title, noteJSON);
-							});
-
-							loadNotes();
-						};
-
-						reader.readAsText(file);
-					});
-
-					fileInput.click();
-				}
-
-
-				function handleNoteClick(event) {
-					var target = event.target;
-					if (target.tagName === 'STRONG') {
-						var noteTitle = target.textContent;
-						var noteJSON = localStorage.getItem('NOTE_' + noteTitle);
-						var note = JSON.parse(noteJSON);
-						displayNote(note);
-					}
-				}
-
-				function getTime() {
-					var time = new Date();
-					var hour = time.getHours();
-					var min = time.getMinutes();
-					var sec = time.getSeconds();
-
-					var formattedHour = ("0" + hour).slice(-2);
-					var formattedMin = ("0" + min).slice(-2);
-					var formattedSec = ("0" + sec).slice(-2);
-
-					var formattedDate = time.toISOString().slice(0, 10);
-
-					var formattedTime = formattedDate + " " + formattedHour + ":" + formattedMin + ":" + formattedSec;
-
-					return formattedTime;
-				}
-			};
-		</script>
-	</body>
 </html>

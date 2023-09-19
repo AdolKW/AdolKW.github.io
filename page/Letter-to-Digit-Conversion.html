@@ -1,69 +1,74 @@
 <html>
+
 <head>
     <title>Letter to Digit Conversion</title>
     <link rel="stylesheet" href="/css/global.css">
 </head>
+
 <body>
     <script src="../js/main.js"></script>
 
-<form id="letterToDigitForm">
-    <label for="input">请输入一串字母（不区分大小写）:</label>
-    <input type="text" id="input" name="input" onkeyup="letterToDigitConversion()">
-</form>
-<p id="result"></p>
+    <div class="base-container">
+        <form id="letterToDigitForm">
+            <label for="input">请输入一串字母（不区分大小写）:</label>
+            <input type="text" id="input" name="input" onkeyup="letterToDigitConversion()">
+        </form>
+        <p id="result"></p>
+    </div>
 
-<script>
-    function letterToDigitConversion() {
-        const letterMapping = {
-            'A': 0,
-            'B': 1,
-            'C': 2,
-            'D': 3,
-            'E': 4,
-            'F': 5,
-            'G': 6,
-            'H': 7,
-            'I': 8,
-            'J': 9,
-            'K': 0,
-            'L': 1,
-            'M': 2,
-            'N': 3,
-            'O': 4,
-            'P': 5,
-            'Q': 6,
-            'R': 7,
-            'S': 8,
-            'T': 9,
-            'U': 0,
-            'V': 1,
-            'W': 2,
-            'X': 3,
-            'Y': 4,
-            'Z': 5
-        };
+    <script>
+        function letterToDigitConversion() {
+            const letterMapping = {
+                'A': 0,
+                'B': 1,
+                'C': 2,
+                'D': 3,
+                'E': 4,
+                'F': 5,
+                'G': 6,
+                'H': 7,
+                'I': 8,
+                'J': 9,
+                'K': 0,
+                'L': 1,
+                'M': 2,
+                'N': 3,
+                'O': 4,
+                'P': 5,
+                'Q': 6,
+                'R': 7,
+                'S': 8,
+                'T': 9,
+                'U': 0,
+                'V': 1,
+                'W': 2,
+                'X': 3,
+                'Y': 4,
+                'Z': 5
+            };
 
-        const inputElement = document.getElementById('input');
-        const resultElement = document.getElementById('result');
+            const inputElement = document.getElementById('input');
+            const resultElement = document.getElementById('result');
 
-        const input = inputElement.value.toUpperCase().trim();
-        if (input === '') {
-            resultElement.innerHTML = '';
-            return;
-        }
-
-        let result = "字母映射数字结果: ";
-        for (let i = 0; i < input.length; i++) {
-            const c = input[i];
-            if (letterMapping.hasOwnProperty(c)) {
-                result += letterMapping[c] + " ";
-            } else {
-                result += "X ";
+            const input = inputElement.value.toUpperCase().trim();
+            if (input === '') {
+                resultElement.innerHTML = '';
+                return;
             }
-        }
 
-        resultElement.innerHTML = result.trim();
-    }
-</script>
+            let result = "字母映射数字结果: ";
+            for (let i = 0; i < input.length; i++) {
+                const c = input[i];
+                if (letterMapping.hasOwnProperty(c)) {
+                    result += letterMapping[c] + " ";
+                } else {
+                    result += "X ";
+                }
+            }
+
+            resultElement.innerHTML = result.trim();
+        }
+    </script>
 </body>
+
 </html>
