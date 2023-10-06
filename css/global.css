@@ -1,52 +1,84 @@
-body {
-    font-family: 微软雅黑;
-    margin: 0;
-    background-image: url('../image/background.png');
-    background-size: cover;
-    /* 让背景图基于容器大小伸缩 */
-    background-attachment: fixed;
-    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
-    background-color: #CCCCCC;
-    /* 设置背景颜色，背景图加载过程中会显示背景色 */
-}
-
-nav {
-    margin-top: 20px;
-    margin-bottom: 5%;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    font-family: Times New Roman;
 }
 
-nav ul li {
-    margin: 0 20px;
-    width: 100px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 30px;
-    padding: 10px;
-    font-size: 15px;
-    text-align: center;
+body {
+    background: url(../image/background.png);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-nav ul li:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-}
-
-nav ul li a {
+a {
     text-decoration: none;
-    color: black;
-    padding: 10px;
 }
 
-nav ul li a:hover {
-    color: red;
+li {
+    list-style: none;
+}
+
+.header {
+    height: 5vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    float: left;
+    margin-left: 3%;
+    line-height: 5vh;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.nav {
+    width: 75vw;
+    height: 5vh;
+    margin: 0 auto;
+}
+
+.nav li {
+    float: left;
+    margin-right: 5%;
+    line-height: 5vh;
+}
+
+.nav li:hover {
+    border-bottom: 2px solid skyblue;
+}
+
+.nav li a {
+    display: block;
+    height: 5vh;
+    padding: 0 9px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav li a:hover {
+    color: blue;
+    transform: scale(1.2);
+}
+
+.wrapper {
+    width: 65vw;
+    margin: 0 auto;
+}
+
+.base-container {
+    height: 95vh;
+    overflow-y: scroll;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.base-container::-webkit-scrollbar {
+    display: none;
 }
 
 .button {
@@ -84,21 +116,5 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 .article::-webkit-scrollbar {
-    display: none;
-}
-
-.base-container {
-    background-color: transparent;
-    width: 85%;
-    height: 80vh;
-    overflow-y: scroll;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-.base-container::-webkit-scrollbar {
     display: none;
 }
