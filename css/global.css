@@ -83,7 +83,7 @@ li {
 
 .nav-page {
     text-align: center;
-    margin-top: 25%;
+    margin-top: 30vh;
 }
 
 .button {
@@ -92,7 +92,8 @@ li {
     background-color: var(--button-bg);
     color: var(--button-color);
     text-decoration: none;
-    font-size: 20px;
+    height: 2vh;
+    line-height: 2vh;
     border: none;
     margin-top: 10px;
     margin-bottom: 10px;
