@@ -1,13 +1,11 @@
 :root {
-    --body-bg: rgba(128,128,128,0.5);
+    --body-bg: white;
     --header-bg: rgba(255, 255, 255, 0.8);
-    --header-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    --header-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
     --title-color: black;
     --nav-underline-color: skyblue;
     --nav-color: black;
     --nav-hover-color: blue;
-    --button-bg: rgba(255, 255, 255, 0.7);
-    --button-color: black;
-    --button-hover-color: blue;
-    --article-bg: rgba(255, 255, 255, 0.7);
+    --window-color:black;
+    --window-hover-color:blue;
 }

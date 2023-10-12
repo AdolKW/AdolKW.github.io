@@ -44,6 +44,7 @@ li {
     float: left;
     margin-right: 5%;
     line-height: 5vh;
+    transition: all 800ms;
 }
 
 .nav li:hover {
@@ -57,6 +58,7 @@ li {
     color: var(--nav-color);
     font-weight: bold;
     font-size: 16px;
+    transition: all 800ms;
 }
 
 .nav li a:hover {
@@ -81,42 +83,30 @@ li {
     display: none;
 }
 
-.nav-page {
+.window{
+    margin:5% auto;
+    width:60%;
+    height:180px;
+    line-height: 180px;
     text-align: center;
-    margin-top: 30vh;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.1);
+    border:none;
+    transition: all 400ms;
 }
 
-.button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: var(--button-bg);
-    color: var(--button-color);
-    text-decoration: none;
-    height: 2vh;
-    line-height: 2vh;
-    border: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.window:hover{
+    box-shadow: 0 0 20px 2px rgba(0,0,0,0.2);
 }
 
-.button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    color: var(--button-hover-color);
+.window a{
+    display: block;
+    font-size: 20px;
+    color:var(--window-color);
+    transition: all 800ms;
 }
 
-.article {
-    background-color: var(--article-bg);
-    width: 80%;
-    height: 70vh;
-    overflow-y: scroll;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-}
-
-.article::-webkit-scrollbar {
-    display: none;
+.window a:hover{
+    font-size: 25px;
+    font-weight: bold;
+    color:var(--window-hover-color);
 }
