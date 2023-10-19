@@ -1,0 +1,8 @@
+:root {
+    --header-h: 5vh;
+    --nav-w: 75vw;
+    --nav-h: 5vh;
+    --nav-li-w: 5%;
+    --nav-li-right: 3%;
+    --slider-left: calc(var(--nav-li-w) + var(--nav-li-right));
+}

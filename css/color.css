@@ -5,7 +5,8 @@
     --title-color: black;
     --nav-underline-color: skyblue;
     --nav-color: black;
-    --nav-hover-color: blue;
-    --window-color:black;
-    --window-hover-color:blue;
+    --nav-hover-color: skyblue;
+    --window-color: black;
+    --window-hover-color: skyblue;
+    --slider-color: rgba(128, 128, 128, 1);
 }

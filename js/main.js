@@ -7,8 +7,8 @@ function CreateHeader() {
 
     let titleA = document.createElement('a');
     titleA.className = 'title';
-    titleA.href='/index.html';
-    titleA.textContent='伊始之苏';
+    titleA.href = '/index.html';
+    titleA.textContent = '伊始之苏';
     headerDiv.appendChild(titleA);
 
     let ul = document.createElement('ul');
@@ -28,6 +28,9 @@ function CreateHeader() {
         ul.appendChild(li);
     });
 
+    let sliderDiv = document.createElement('div');
+    sliderDiv.className = 'slider';
+    ul.appendChild(sliderDiv);
     navWrapperDiv.appendChild(ul);
     headerDiv.appendChild(navWrapperDiv);
 
