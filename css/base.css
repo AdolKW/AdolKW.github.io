@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Times New Roman;
+}
+
+body {
+    background: var(--body-bg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    width: var(--wrapper-w);
+    margin: 0 auto;
+}
+
+.base-container {
+    height: var(--base-container-h);
+    overflow-y: scroll;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.base-container::-webkit-scrollbar {
+    display: none;
+}

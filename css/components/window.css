@@ -1,0 +1,27 @@
+.window {
+    margin: 5% auto;
+    width: var(--window-w);
+    height: var(--window-h);
+    line-height: var(--window-h);
+    text-align: center;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: all 400ms;
+}
+
+.window:hover {
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+}
+
+.window a {
+    display: block;
+    font-size: 20px;
+    color: var(--window-color);
+    transition: all 800ms;
+}
+
+.window a:hover {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--window-hover-color);
+}

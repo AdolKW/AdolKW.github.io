@@ -1,0 +1,115 @@
+li {
+    list-style: none;
+}
+
+.header {
+    height: var(--header-h);
+    background-color: var(--header-bg);
+    box-shadow: var(--header-shadow);
+    caret-color: transparent;
+}
+
+.header .nav a:active {
+    color: var(--a-active-color);
+}
+
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    height: var(--header-h);
+}
+
+.nav {
+    position: relative;
+    width: var(--nav-w);
+    height: var(--header-h);
+    margin: 0 auto;
+}
+
+.nav li {
+    float: left;
+    margin-right: var(--nav-li-right);
+    width: var(--nav-li-w);
+    height: var(--header-h);
+    text-align: center;
+    line-height: var(--header-h);
+    transition: all 800ms;
+}
+
+.nav li:hover {
+    border-bottom: 2px solid var(--nav-underline-color);
+}
+
+.nav li:active {
+    border-bottom: 2px solid var(--a-active-color);
+}
+
+.nav li a {
+    display: block;
+    padding: 0 9px;
+    color: var(--nav-color);
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 800ms;
+}
+
+.nav li a:hover {
+    color: var(--nav-hover-color);
+    transform: scale(1.2);
+}
+
+.slider {
+    position: absolute;
+    width: var(--nav-li-w);
+    height: var(--header-h);
+    background-color: rgba(128, 128, 128, 0);
+    left: calc(var(--nav-li-w) * -1);
+    z-index: -1;
+    transition: 800ms;
+}
+
+.nav li:nth-child(1):hover~.slider {
+    left: calc(var(--slider-left) * 0);
+    background-color: var(--slider-color);
+}
+
+.nav li:nth-child(2):hover~.slider {
+    left: calc(var(--slider-left) * 1);
+    background-color: var(--slider-color);
+}
+
+.nav li:nth-child(3):hover~.slider {
+    left: calc(var(--slider-left) * 2);
+    background-color: var(--slider-color);
+}
+
+.title {
+    float: right;
+    margin-left: 3%;
+    line-height: var(--header-h);
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--title-color);
+    transition: 800ms;
+    animation: blinkEffect 2s infinite;
+}
+
+@keyframes blinkEffect {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.title:hover {
+    color: var(--nav-hover-color);
+    transform: scale(1.2);
+}
