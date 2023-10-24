@@ -25,3 +25,7 @@
     font-weight: bold;
     color: var(--window-hover-color);
 }
+
+.window a:active {
+    color: var(--a-active-color);
+}
