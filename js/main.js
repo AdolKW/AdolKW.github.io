@@ -17,14 +17,17 @@ function CreateHeader() {
     let ul = document.createElement('ul');
     let items = [
         { href: '/index.html', text: '首页' },
-        { href: '/navigation/收藏.html', text: '收藏' },
-        { href: '/navigation/工具.html', text: '工具' }
+        { href: '/navigation/collection.html', text: '收藏' },
+        { href: '/navigation/tool.html', text: '工具' }
     ];
     items.forEach(item => {
         let li = document.createElement('li');
         let a = document.createElement('a');
         a.href = item.href;
         a.textContent = item.text;
+        if(window.location.pathname===item.href){
+            a.classList.add('a-active');
+        }
         li.appendChild(a);
         ul.appendChild(li);
     });
@@ -47,13 +50,10 @@ function CreateHeader() {
 CreateHeader();
 
 function AddSiteIcon() {
-
-    // 创建link元素
     let link = document.createElement('link');
     link.rel = 'shortcut icon';
     link.href = '/image/ys.png';
     link.type = 'image/x-icon';
-    // 将link元素添加到<head>标签中
     document.head.appendChild(link);
 }
 AddSiteIcon();

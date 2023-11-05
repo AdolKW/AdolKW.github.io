@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using OpenLayers with Vite</title>
+  <script type="module" crossorigin src="./assets/index-d6150e58.js"></script>
+  <link rel="stylesheet" href="./assets/index-8304cd8d.css">
+  <script type="module">import.meta.url;import("_").catch(()=>1);async function* g(){};if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
+  <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+</head>
+
+<body>
+  <div id="map">
+    <!-- <div id="my-popup" class="my-ol-popup">
+      <a href="#" id="my-popup-closer" class="my-ol-popou-closer"></a>
+      <div id="my-popup-content"></div>
+    </div> -->
+  </div>
+  <form id="customHeatmap">
+    <label for="radius">radius size</label>
+    <input id="radius" type="range" min="1" max="50" step="1" value="5" />
+    <label for="blur">blur size</label>
+    <input id="blur" type="range" min="1" max="50" step="1" value="15" />
+  </form>
+  <div id="popup" class="ol-popup">
+    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+    <div id="popup-content"></div>
+  </div>
+  <div id="customButton" class="ol-zoom ol-unselectable ol-control" style="pointer-events: auto; margin-top: 5%;">
+    <button class="ol-zoom" type="button" onclick="SwitchLayer()">⇌</button>
+    <button class="ol-zoom" type="button" onclick="LocatingUser()">⊙</button>
+    <button class="ol-zoom" type="button" onclick="ClockwiseRotateMap()">↻</button>
+    <button class="ol-zoom" type="button" onclick="CounterclockwiseRotateMap()">↺</button>
+    <button class="ol-zoom" type="button" onclick="ToDestination([120.1551, 30.2741])">杭</button>
+    <button class="ol-zoom" type="button" onclick="ToDestination([116.4074, 39.9042])">北</button>
+  </div>
+  
+  <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+  <script nomodule crossorigin id="vite-legacy-polyfill" src="./assets/polyfills-legacy-6841de79.js"></script>
+  <script nomodule crossorigin id="vite-legacy-entry" data-src="./assets/index-legacy-ce472ece.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+</body>
+
+</html>

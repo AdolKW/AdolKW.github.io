@@ -13,6 +13,10 @@ a {
     text-decoration: none;
 }
 
+.a-active{
+    background-color: var(--a-active-color);
+}
+
 .wrapper {
     width: var(--wrapper-w);
     margin: 0 auto;
