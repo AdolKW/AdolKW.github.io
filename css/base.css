@@ -33,3 +33,36 @@ a {
 .base-container::-webkit-scrollbar {
     display: none;
 }
+
+.float-btn {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.8);
+    right: 20vw;
+    width: 80px;
+    height: 80px;
+    color: black;
+    text-align: center;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
+    line-height: 80px;
+    transition: background-color 800ms;
+    user-select: none;
+}
+
+.float-btn span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 25px;
+}
+
+.float-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.float-btn#to-top {
+    bottom: 20vh;
+}
+
+.float-btn#to-bottom {
+    bottom: 10vh;
+}

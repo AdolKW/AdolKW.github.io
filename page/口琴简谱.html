@@ -15,14 +15,19 @@
 			white-space: pre-wrap;
 			font-size: 20px;
 		}
+
+		#all-in {
+			bottom: 30vh;
+		}
 	</style>
 </head>
 
 <body>
 	<script src="../js/main.js"></script>
 	<div class="base-container wrapper"></div>
+	<div id="all-in" class="float-btn"><span>展开/折叠全部</span></div>
 	<script>
-		const base = document.querySelector('.base-container.wrapper');
+		const base = document.querySelector('.base-container.wrapper')
 		const music = [
 			{
 				name: '醉恋花',
@@ -602,8 +607,8 @@
 (#6)#1#5#5#4#4#1#2#1`
 			},
 			{
-				name:'Ref:rain',
-				content:`
+				name: 'Ref:rain',
+				content: `
 2 (7)  (6 6 7 6 5 5)  22 (77) 1(7 6 5 5)
 2 (7)  (6 6 7 6 5 5)  (5 53 55 67 5)2- 
 (76)  (7)1(7 6)  (2) 1(77 6 7 6 5 5)-
@@ -641,8 +646,8 @@
 22 3632 3632 36323----`
 			},
 			{
-				name:'国际歌',
-				content:`
+				name: '国际歌',
+				content: `
 4#6 6【1】#6 425 #2
 5【1】 #665 4#22
 4#6 6【1】#6 425 #2
@@ -661,8 +666,8 @@
 【#22 21 1】#6`
 			},
 			{
-				name:'心做し',
-				content:`
+				name: '心做し',
+				content: `
 263 2#12(6)23 #432#12
 
 263 2#12(6)23 #45#432
@@ -695,8 +700,8 @@
 6【3】【2】`
 			},
 			{
-				name:'相遇天使',
-				content:`
+				name: '相遇天使',
+				content: `
 2(#6)2#2#3#22(#7#6)2
 (#6)2#2#3#2212(#7#6)
 (#6)2(#7#6)
@@ -718,8 +723,8 @@
 #3#6#7 #46【1】 4【1221】#66#65 #6#65#6【1212】`
 			},
 			{
-				name:'逆さまの蝶',
-				content:`
+				name: '逆さまの蝶',
+				content: `
 #1#1#1#1#1(#5)(#6)#1
 #1#1#1(#5)(#5)(#6)(#5)
 #1#1#1#1#1(#5)(#6)#1
@@ -761,8 +766,8 @@
 (6)#433 (6)#433 (6)#433 23#4#4`
 			},
 			{
-				name:'一番の宝物',
-				content:`
+				name: '一番の宝物',
+				content: `
 (6)(#6)1(#6)1(6)(5)(4)
 (6)(#6)1(#6)11343
 (6)(#6)1(#6)1(6)(5)(4)
@@ -815,8 +820,8 @@
 #6【1】#6#2211(#6)(#6)`
 			},
 			{
-				name:'老人与海',
-				content:`
+				name: '老人与海',
+				content: `
 1111(665565)
 1111(65564)
 (4456)1(665 56544)
@@ -848,8 +853,8 @@
 65454`
 			},
 			{
-				name:'春泥棒',
-				content:`
+				name: '春泥棒',
+				content: `
 1111 1（656）
 
 （6666）1（6 5454）
@@ -981,8 +986,8 @@
 456 ｛121｝ 54 454`
 			},
 			{
-				name:'Avid',
-				content:`
+				name: 'Avid',
+				content: `
 2666 65#45 #422
 2666 65#45 655
 2666 65#45 #422
@@ -1012,6 +1017,49 @@
 3 6 75 #45
 76 33 33 #4#4 #4#4 55 55 #4#4 
 33 33 33 #4#4 #4#4 55 55 #43`
+			},
+			{
+				name: '最长的电影',
+				content: `
+（3#4 6#5#5）（#5 67  6 #53）
+（3#4 6#5#5）（#5#43 #1#4#4）
+（3#4 6#5#5）（#567 6#5 3 76)
+(6#5）3    (#5#4#433)
+（3#4 6#5#5）（#5 67  6 #53）
+（3#4 6#5#5）（#5#43#1#4#4）
+（3#4 6#5#5）（#567  6#5 3）   #43
+(46#5) 3 （3#5#4)3#23
+
+#5#43 #1 #4#4 
+#5#43 (7) #4#4 #23
+#5#43 #1 #4#4
+3 6#5#43 
+(7)6#5#5  #4#5
+#56#5 【#1】#5#5#4#4
+#4#5#4 7 #4#4 #2#43
+(7#56） 33 #4 6#5#4 33
+
+（3#4 6#5#5）（#5 67  6 #53）
+（3#4 6#5#5）（#5#43#1#4#4）
+（3#4 6#5#5）（#567  6#5 3）   #43
+(6#5) 3 （3#5#4)3#23
+
+#5#43 #1 #4#4 
+#5#43 (7) #4#4 #23
+#5#43 #1 #4#4
+3 6#5#43 
+(7)6#5#5  #4#5
+#56#5 【#1】#5#5#4#4
+#4#5#4 7 #4#4 #2#43
+(7#56） 33 #4 6#5#4 33
+ #5#43 #1 #4#4
+#5#43 (7) #4#4 #53
+#5#43 #1 #4#4
+3 6#5#43 
+(7)6#5#5  6#5
+#56#5 【#1】#5#56#4
+#4#5#4 7 #4#4 #2#43
+(7#56） 33 #4 6#5#4 33`
 			}
 		]
 		base.innerHTML = music.map((m) => {
@@ -1022,6 +1070,21 @@
 				<p>${m.content}</p>
 			</details>`
 		}).join('')
+
+		const allIn = document.getElementById('all-in')
+		allIn.addEventListener('click', UnfoldOrFold)
+		function UnfoldOrFold() {
+			console.log('执行')
+			const details = document.getElementsByTagName('details')
+			const detailsArray = Array.from(details);
+			const isAllOpen = detailsArray.every(detail => detail.open);
+			if (isAllOpen) {
+				detailsArray.forEach(detail => detail.open = false)
+			}
+			else {
+				detailsArray.forEach(detail => detail.open = true)
+			}
+		}
 	</script>
 </body>
 
