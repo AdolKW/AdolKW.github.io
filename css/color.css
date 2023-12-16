@@ -10,4 +10,8 @@
     --window-color: black;
     --window-hover-color: skyblue;
     --slider-color: rgba(128, 128, 128, 1);
+    --float-btn-bg:rgba(255, 255, 255, 0.8);
+    --float-btn-color:black;
+    --float-btn-shadow:0 0 5px 3px rgba(0, 0, 0, 0.1);
+    --float-btn-hover-bg:rgba(0, 0, 0, 0.1);
 }

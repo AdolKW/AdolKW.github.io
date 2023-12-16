@@ -3,11 +3,21 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>口琴简谱</title>
+	<title>简谱</title>
 	<link rel="stylesheet" href="/css/global.css">
 	<style>
+		#title {
+			text-align: center;
+			margin-bottom: 25px;
+		}
+
 		.highlight {
 			color: Blue;
+			user-select: none;
+		}
+
+		.highlight:hover {
+			cursor: pointer;
 		}
 
 		p {
@@ -24,7 +34,9 @@
 
 <body>
 	<script src="../js/main.js"></script>
-	<div class="base-container wrapper"></div>
+	<div class="base-container wrapper">
+		<h1 id="title">简谱</h1>
+	</div>
 	<div id="all-in" class="float-btn"><span>展开/折叠全部</span></div>
 	<script>
 		const base = document.querySelector('.base-container.wrapper')
@@ -1062,7 +1074,7 @@
 (7#56） 33 #4 6#5#4 33`
 			}
 		]
-		base.innerHTML = music.map((m) => {
+		base.innerHTML += music.map((m) => {
 			return `
 			<h1>${m.name}</h1>
 			<details>
@@ -1074,7 +1086,6 @@
 		const allIn = document.getElementById('all-in')
 		allIn.addEventListener('click', UnfoldOrFold)
 		function UnfoldOrFold() {
-			console.log('执行')
 			const details = document.getElementsByTagName('details')
 			const detailsArray = Array.from(details);
 			const isAllOpen = detailsArray.every(detail => detail.open);

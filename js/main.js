@@ -30,7 +30,7 @@ function CreateHeader() {
         }
         li.appendChild(a)
         ul.appendChild(li)
-    });
+    })
     const sliderDiv = document.createElement('div')
     sliderDiv.className = 'slider'
     ul.appendChild(sliderDiv)
@@ -62,12 +62,12 @@ function CreateFloatBtn() {
     const toTopBtn = document.createElement('div')
     toTopBtn.id = 'to-top'
     toTopBtn.className = 'float-btn'
-    toTopBtn.innerHTML = '<span>↑</span>'
+    toTopBtn.innerHTML = '<span>▲<br>顶部</span>'
 
     const toBottomBtn = document.createElement('div')
     toBottomBtn.id = 'to-bottom'
     toBottomBtn.className = 'float-btn'
-    toBottomBtn.innerHTML = '<span>↓</span>'
+    toBottomBtn.innerHTML = '<span>底部<br>▼</span>'
 
     document.body.appendChild(toTopBtn)
     document.body.appendChild(toBottomBtn)
