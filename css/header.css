@@ -9,10 +9,6 @@ li {
     caret-color: transparent;
 }
 
-.header .nav a:active {
-    color: var(--a-active-color);
-}
-
 .header-image {
     position: absolute;
     top: 0;
@@ -51,12 +47,17 @@ li {
     color: var(--nav-color);
     font-weight: bold;
     font-size: 16px;
-    transition: all 800ms;
+    transition: all 800ms,transform 300ms;
 }
 
 .nav li a:hover {
     color: var(--nav-hover-color);
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.nav li a:active {
+    color: blue;
+    transform: scale(0.9);
 }
 
 .slider {

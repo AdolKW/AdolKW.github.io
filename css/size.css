@@ -1,12 +1,12 @@
 :root {
-    --header-h: 5vh;
+    --header-h: 6vh;
     --nav-w: 75vw;
     --nav-li-w: 5%;
     --nav-li-right: 3%;
     --slider-left: calc(var(--nav-li-w) + var(--nav-li-right));
     --wrapper-w: 65vw;
-    --base-container-h: 95vh;
-    --window-w:60%;
-    --window-h:180px;
-    --float-btn-size:80px;
+    --base-container-h: calc(100vh - var(--header-h));
+    --window-w: 60%;
+    --window-h: 180px;
+    --float-btn-size: 80px;
 }
