@@ -5,7 +5,7 @@
     --nav-li-right: 3%;
     --slider-left: calc(var(--nav-li-w) + var(--nav-li-right));
     --wrapper-w: 65vw;
-    --base-container-h: calc(100vh - var(--header-h));
+    --base-container-h: calc(92vh - var(--header-h));
     --window-w: 60%;
     --window-h: 180px;
     --float-btn-size: 80px;
