@@ -2,47 +2,46 @@
 <html>
 
 <head>
-	<meta charset="gbk">
-	<title>源代码</title>
-	<link rel="stylesheet" href="/css/global.css">
-	<style>
-		#title {
-			text-align: center;
-			margin-bottom: 25px;
-		}
+    <meta charset="gbk">
+    <title>源代码</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <style>
+        #title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
 
-		.highlight {
-			color: Blue;
-			user-select: none;
-		}
+        .highlight {
+            color: Blue;
+            user-select: none;
+        }
 
-		.highlight:hover {
-			cursor: pointer;
-		}
+        .highlight:hover {
+            cursor: pointer;
+        }
 
-		p {
-			white-space: pre-wrap;
-			font-size: 20px;
-		}
+        p {
+            white-space: pre-wrap;
+            font-size: 20px;
+        }
 
-		#all-in {
-			bottom: 30vh;
-		}
-	</style>
+        #all-in {
+            bottom: 30vh;
+        }
+    </style>
 </head>
 
 <body>
-	<script src="../js/main.js"></script>
-	<div class="base-container wrapper">
-		<h1 id="title">源代码</h1>
-	</div>
-	<div id="all-in" class="float-btn"><span>展开/折叠全部</span></div>
-	<script>
-		const base = document.querySelector('.base-container.wrapper')
-		const sourceCode = [
-			{
-				name: 'C语言贪吃蛇控制台版',
-				content:`
+    <script src="../js/main.js"></script>
+    <div class="base-container wrapper">
+        <h1 id="title">源代码</h1>
+    </div>
+    <div id="all-in" class="float-btn"><span>展开/折叠全部</span></div>
+    <script>
+        const base = document.querySelector('.base-container.wrapper')
+        const sourceCode = [{
+            name: 'C语言贪吃蛇控制台版',
+            content: `
 #include <conio.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -325,10 +324,10 @@ void DrawGameMap() {
         }
     }
 }`
-			},
-            {
-                name:'VSCode clang-format配置',
-                content:`
+        },
+        {
+            name: 'VSCode clang-format配置',
+            content: `
 # 语言: None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
 Language: Cpp
 # BasedOnStyle:	LLVM
@@ -542,43 +541,44 @@ TabWidth: 4
 
 # 使用tab字符: Never, ForIndentation, ForContinuationAndIndentation, Always
 UseTab: Never`
-            },
-            {
-                name:'我的VSCode格式化配置',
-                content:`
+        },
+        {
+            name: '我的VSCode格式化配置',
+            content: `
 { BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, IndentCaseLabels: false, IndentWrappedFunctionNames: false, AlignTrailingComments: false, SpaceBeforeParens: ControlStatements, BreakBeforeBraces: Custom, BraceWrapping: { AfterControlStatement: false, BeforeElse: true, SplitEmptyFunction: false, SpaceBeforeParens: Always } }`
-            }
-		]
-		function ReplaceBracket(str) {
-			str = str.replace(/</g, "\&lt")
-			str = str.replace(/>/g, "\&gt")
-			return str;
-		}
+        }
+        ]
 
-		base.innerHTML += sourceCode.map((m) => {
-			m.content = ReplaceBracket(m.content)
-			return `
+        function ReplaceBracket(str) {
+            str = str.replace(/</g, "\&lt")
+            str = str.replace(/>/g, "\&gt")
+            return str;
+        }
+
+        base.innerHTML += sourceCode.map((m) => {
+            m.content = ReplaceBracket(m.content)
+            return `
 				<h1>${m.name}</h1>
 				<details>
 					<summary class="highlight">展开/收起</summary>
 					<p>${m.content}</p>
 				</details>`
-		}).join('')
+        }).join('')
 
-		const allIn = document.getElementById('all-in')
-		allIn.addEventListener('click', UnfoldOrFold)
-		function UnfoldOrFold() {
-			const details = document.getElementsByTagName('details')
-			const detailsArray = Array.from(details);
-			const isAllOpen = detailsArray.every(detail => detail.open);
-			if (isAllOpen) {
-				detailsArray.forEach(detail => detail.open = false)
-			}
-			else {
-				detailsArray.forEach(detail => detail.open = true)
-			}
-		}
-	</script>
+        const allIn = document.getElementById('all-in')
+        allIn.addEventListener('click', UnfoldOrFold)
+
+        function UnfoldOrFold() {
+            const details = document.getElementsByTagName('details')
+            const detailsArray = Array.from(details);
+            const isAllOpen = detailsArray.every(detail => detail.open);
+            if (isAllOpen) {
+                detailsArray.forEach(detail => detail.open = false)
+            } else {
+                detailsArray.forEach(detail => detail.open = true)
+            }
+        }
+    </script>
 </body>
 
 </html>
