@@ -44,9 +44,9 @@ li {
 .nav li a {
     display: block;
     padding: 0 9px;
-    color: var(--nav-color);
+    color: var(--nav-li-a-color);
     font-weight: bold;
-    font-size: 1vw;
+    font-size: var(--nav-li-a-size);
     transition: all 800ms;
 }
 
