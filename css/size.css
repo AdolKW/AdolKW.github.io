@@ -1,8 +1,8 @@
 :root {
     --header-h: 6vh;
     --nav-w: 75vw;
-    --nav-li-w: 5%;
-    --nav-li-right: 3%;
+    --nav-li-w: 5vw;
+    --nav-li-right: 2vw;
     --slider-left: calc(var(--nav-li-w) + var(--nav-li-right));
     --wrapper-w: 65vw;
     --base-container-h: calc(92vh - var(--header-h));

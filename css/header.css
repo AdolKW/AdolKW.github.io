@@ -34,11 +34,11 @@ li {
 }
 
 .nav li:hover {
-    border-bottom: 2px solid var(--nav-underline-color);
+    border-bottom: 2px solid var(--nav-hover-color);
 }
 
 .nav li:active {
-    border-bottom: 2px solid var(--a-active-color);
+    border-bottom: 2px solid var(--nav-active-color);
 }
 
 .nav li a {
@@ -46,8 +46,8 @@ li {
     padding: 0 9px;
     color: var(--nav-color);
     font-weight: bold;
-    font-size: 16px;
-    transition: all 800ms,transform 300ms;
+    font-size: 1vw;
+    transition: all 800ms;
 }
 
 .nav li a:hover {
@@ -56,7 +56,7 @@ li {
 }
 
 .nav li a:active {
-    color: blue;
+    color: var(--nav-active-color);
     transform: scale(0.9);
 }
 
@@ -89,7 +89,7 @@ li {
     float: right;
     margin-left: 3%;
     line-height: var(--header-h);
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: bold;
     color: var(--title-color);
     transition: 800ms;
@@ -112,5 +112,10 @@ li {
 
 .title:hover {
     color: var(--nav-hover-color);
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.title:active {
+    color: var(--nav-active-color);
+    transform: scale(0.9);
 }
