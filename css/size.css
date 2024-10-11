@@ -11,3 +11,16 @@
     --window-h: 20vh;
     --float-btn-size: 5vw;
 }
+
+@media (max-width: 600px) {
+    :root {
+        --header-h: 10vh;         
+        --nav-w: 80vw;             
+        --nav-li-w: 20vw;          
+        --nav-li-right: 3vw;       
+        --nav-a-size: 4vw;         
+        --wrapper-w: 90vw;         
+        --window-h: 40vh;          
+        --float-btn-size: 15vw;    
+    }
+}
