@@ -12,15 +12,26 @@
     --float-btn-size: 5vw;
 }
 
-@media (max-width: 600px) {
+@media screen and (min-height: 2000px) {
     :root {
-        --header-h: 10vh;         
-        --nav-w: 80vw;             
-        --nav-li-w: 20vw;          
-        --nav-li-right: 3vw;       
-        --nav-a-size: 4vw;         
-        --wrapper-w: 90vw;         
-        --window-h: 40vh;          
-        --float-btn-size: 15vw;    
+        --header-h: 6.25rem;
+        /* 10vh 假设根字体大小为 16px，10vh ≈ 6.25rem */
+        --nav-w: 80vw;
+        /* 仍然保持使用 vw，因为它是相对宽度 */
+        --nav-li-w: 12.5rem;
+        /* 20vw 假设根字体大小为 16px，20vw ≈ 12.5rem */
+        --nav-li-right: 1.875rem;
+        /* 3vw 假设根字体大小为 16px，3vw ≈ 1.875rem */
+        --nav-a-size: 1.25rem;
+        /* 2vw 假设根字体大小为 16px，2vw ≈ 1.25rem */
+        --slider-left: calc(var(--nav-li-w) + var(--nav-li-right));
+        --wrapper-w: 56.25rem;
+        /* 90vw 假设根字体大小为 16px，90vw ≈ 56.25rem */
+        --base-container-h: calc(85.5rem - var(--header-h));
+        /* 92vh ≈ 85.5rem */
+        --window-h: 6.25rem;
+        /* 10vh ≈ 6.25rem */
+        --float-btn-size: 9.375rem;
+        /* 15vw ≈ 9.375rem */
     }
 }
