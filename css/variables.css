@@ -1,0 +1,9 @@
+:root {
+    --sidebar-width: 3.75rem;
+    --sidebar-hover-color: #6cadb0;
+    --navbar-bg-color: #acd0d1;
+    --text-color: #222;
+    --highlight-color: white;
+}
+
+/* 排列属性：布局、位置、大小、边框、背景、文本、动画 */

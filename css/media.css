@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 3rem;
+    }
+
+    .menu {
+        height: 3rem;
+    }
+
+    .menu p {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.75rem;
+    }
+
+    .navbar {
+        left: 3rem;
+    }
+}
+
+/* 排列属性：布局、位置、大小、边框、背景、文本、动画 */

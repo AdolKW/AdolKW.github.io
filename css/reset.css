@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* 排列属性：布局、位置、大小、边框、背景、文本、动画 */

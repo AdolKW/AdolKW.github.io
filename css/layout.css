@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.main-container {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+}
+
+.sidebar {
+    position: fixed;
+    height: 100vh;
+    width: var(--sidebar-width);
+    cursor: pointer;
+    background-color: var(--navbar-bg-color);
+    user-select: none;
+    z-index: 10;
+}
+
+.sidebar:hover .menu {
+    background-color: var(--sidebar-hover-color);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.75rem;
+    border-bottom: 0.0625rem solid var(--highlight-color);
+    transition: all 0.3s ease;
+}
+
+.menu p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    height: 100vh;
+    width: 0;
+    background-color: var(--navbar-bg-color);
+    transition: width 0.3s ease;
+    z-index: 1;
+}
+
+.navbar.active {
+    width: 28.313rem;
+    padding: 12vh 6.25px;
+    box-sizing: border-box;
+    border-left: 1px solid var(--highlight-color);
+}
+
+.nav-options {
+    display: none;
+    letter-spacing: 1rem;
+    line-height: 1.8;
+    box-sizing: border-box;
+}
+
+.navbar.active .nav-options {
+    display: block;
+}
+
+.nav-options li {
+    margin: 0 0 25px;
+}
+
+.nav-options li a {
+    color: var(--text-color);
+    transition: color 500ms ease;
+    position: relative;
+}
+
+.nav-options li a:visited {
+    color: inherit;
+}
+
+.nav-options li a:hover {
+    color: var(--highlight-color);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--highlight-color);
+}
+
+.nav-options li a:hover .underline {
+    left: 0;
+    width: 100%;
+}
+
+.mask {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: calc(100vw - var(--sidebar-width) - 16px);
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.navbar.active+.mask {
+    display: block;
+}
+
+/* 排列属性：布局、位置、大小、边框、背景、文本、动画 */
