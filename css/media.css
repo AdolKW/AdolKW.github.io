@@ -3,18 +3,53 @@
         --sidebar-width: 3rem;
     }
 
-    .menu {
-        height: 3rem;
+    .main-container {
+        flex: 1;
+        margin-left: 0;
+        margin-top: var(--sidebar-width);
     }
 
-    .menu p {
-        width: 1.5rem;
-        height: 1.5rem;
-        font-size: 0.75rem;
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: var(--sidebar-width);
+    }
+
+    .menu {
+        height: var(--sidebar-width);
     }
 
     .navbar {
-        left: 3rem;
+        position: fixed;
+        top: var(--sidebar-width);
+        height: 0;
+        left: 0;
+        background-color: var(--navbar-bg-color);
+        transition: height 0.6s ease;
+        z-index: 1;
+    }
+
+    .navbar.active {
+        width: 100vw;
+        height: 80vh;
+        left: 0;
+        padding: 10vh 6.25px;
+        box-sizing: border-box;
+        border-left: 0;
+        border-top: 1px solid var(--highlight-color);
+    }
+
+    .mask {
+        display: none;
+        position: fixed;
+        right: 0;
+        top: var(--sidebar-width);
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 0;
     }
 }
 

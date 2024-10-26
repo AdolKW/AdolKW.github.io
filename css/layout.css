@@ -63,15 +63,21 @@ body {
 }
 
 .nav-options {
-    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
     letter-spacing: 1rem;
     line-height: 1.8;
     box-sizing: border-box;
+    transition:max-height 1s ease-in;
 }
 
 .navbar.active .nav-options {
-    display: block;
+    opacity: 1;
+    max-height: 100%;
+
 }
+
 
 .nav-options li {
     margin: 0 0 25px;
